@@ -1,6 +1,6 @@
-from api.models import Genre
-
 from rest_framework import serializers, validators
+
+from api.models import Genre
 
 
 class GenreSerializer(serializers.ModelSerializer):

@@ -1,24 +1,19 @@
-from api.models import User
-from api.models.user_confirm_code_db import UserConfirmCodeDb
-from api.permission import AdminRequired, ForUsers
-from api.serializers.userserializer import (
-    RegistrationSerializer,
-    RequestForRegistrationSerializer,
-    UserSerializer
-)
-
 from django.core.mail import send_mail
-
 from django_filters.rest_framework import DjangoFilterBackend
-
-from rest_framework import permissions, viewsets, status
+from rest_framework import permissions, status, viewsets
 from rest_framework.authtoken.models import Token
 from rest_framework.decorators import action
 from rest_framework.generics import CreateAPIView
 from rest_framework.mixins import CreateModelMixin
 from rest_framework.response import Response
-
 from rest_framework_simplejwt.views import TokenObtainPairView
+
+from api.models import User
+from api.models.user_confirm_code_db import UserConfirmCodeDb
+from api.permission import AdminRequired, ForUsers
+from api.serializers.userserializer import (RegistrationSerializer,
+                                            RequestForRegistrationSerializer,
+                                            UserSerializer)
 
 
 class UserViewSet(viewsets.ModelViewSet):

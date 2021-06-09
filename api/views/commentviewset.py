@@ -1,10 +1,10 @@
-from api.models import Review
-from api.permission import IsAuthUser, IsOwnerOrAdmin
-from api.serializers import CommentSerializer
-
 from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.pagination import PageNumberPagination
+
+from api.models import Review
+from api.permission import IsAuthUser, IsOwnerOrAdmin
+from api.serializers import CommentSerializer
 
 
 class CommentViewSet(viewsets.ModelViewSet):

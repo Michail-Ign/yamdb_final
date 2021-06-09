@@ -1,7 +1,7 @@
-from api.mixins import CreateListDeleteViewSet
-
 from rest_framework import filters
 from rest_framework.pagination import PageNumberPagination
+
+from api.mixins import CreateListDeleteViewSet
 
 from ..models.category import Category
 from ..models.genre import Genre

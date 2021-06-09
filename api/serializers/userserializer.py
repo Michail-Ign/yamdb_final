@@ -2,15 +2,12 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 from django.contrib.auth import authenticate
-
 from rest_framework import exceptions, serializers, validators
-from rest_framework_simplejwt.serializers import (
-    TokenObtainSerializer,
-)
+from rest_framework_simplejwt.serializers import TokenObtainSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
-
 from api.models import TempAuth, User
+
 from ..models.user_confirm_code_db import UserConfirmCodeDb
 
 
