@@ -37,7 +37,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: marinella2012/yamdb_final:latest
+          tags: 4a35dbaae52c/yamdb_final:latest
   deploy:
     runs-on: ubuntu-latest
     needs: push_to_docker_hub
