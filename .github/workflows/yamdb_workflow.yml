@@ -41,6 +41,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: push_to_docker_hub
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
@@ -49,8 +50,7 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }}
-          stack_file_name: docker-compose.yaml
-          if: github.ref == 'refs/heads/master'
+          stack_file_name: docker-compose.yaml          
           script: |
             sudo docker ${{ secrets.DOCKER_USERNAME }}/yamdb_final
             sudo docker-compose stop
