@@ -13,7 +13,6 @@ services:
     env_file:
     - ./.env
   web:
-    #-правка!
     image: 4a35dbaae52c/yamdb_final:latest
     restart: always
     command: gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000
